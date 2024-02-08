@@ -20,7 +20,7 @@ def planets(api_key):
     else:
         print("Error:", response.status_code, response.text)
 
-def air_quality(api_key):
+def quotes(api_key):
     category = 'happiness'
     api_url = 'https://api.api-ninjas.com/v1/quotes?category={}'.format(category)
     response = requests.get(api_url, headers={'X-Api-Key': api_key})
@@ -52,8 +52,8 @@ def main():
     planets(planets_api_key)
 
     #call the second api
-    st.subheader("Air Quality")
-    air_quality(planets_api_key)
+    st.subheader("Quote")
+    quotes(planets_api_key)
 
     #call the third api
     st.subheader("Country")
